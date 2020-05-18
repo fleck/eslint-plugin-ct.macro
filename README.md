@@ -1,27 +1,46 @@
-# TSDX Bootstrap
+# eslint-plugin-ct-macro
 
-This project was bootstrapped with [TSDX](https://github.com/jaredpalmer/tsdx).
+class order for ct macro
 
-## Local Development
+## Installation
 
-Below is a list of commands you will probably find useful.
+You'll first need to install [ESLint](http://eslint.org):
 
-### `npm start` or `yarn start`
+```
+$ npm i eslint --save-dev
+```
 
-Runs the project in development/watch mode. Your project will be rebuilt upon changes. TSDX has a special logger for you convenience. Error messages are pretty printed and formatted for compatibility VS Code's Problems tab.
+Next, install `eslint-plugin-ct-macro`:
 
-<img src="https://user-images.githubusercontent.com/4060187/52168303-574d3a00-26f6-11e9-9f3b-71dbec9ebfcb.gif" width="600" />
+```
+$ npm install eslint-plugin-ct-macro --save-dev
+```
 
-Your library will be rebuilt if you make edits.
+**Note:** If you installed ESLint globally (using the `-g` flag) then you must also install `eslint-plugin-ct-macro` globally.
 
-### `npm run build` or `yarn build`
+## Usage
 
-Bundles the package to the `dist` folder.
-The package is optimized and bundled with Rollup into multiple formats (CommonJS, UMD, and ES Module).
+Add `ct-macro` to the plugins section of your `.eslintrc` configuration file. You can omit the `eslint-plugin-` prefix:
 
-<img src="https://user-images.githubusercontent.com/4060187/52168322-a98e5b00-26f6-11e9-8cf6-222d716b75ef.gif" width="600" />
+```json
+{
+    "plugins": [
+        "ct-macro"
+    ]
+}
+```
 
-### `npm test` or `yarn test`
 
-Runs the test watcher (Jest) in an interactive mode.
-By default, runs tests related to files changed since the last commit.
+Then configure the rules you want to use under the rules section.
+
+```json
+{
+    "rules": {
+        "ct-macro/rule-name": 2
+    }
+}
+```
+
+## Supported Rules
+
+* Fill in provided rules here

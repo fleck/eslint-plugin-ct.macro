@@ -32,9 +32,15 @@
   "author": "Jonathan Fleckenstein",
   "module": "dist/eslint-plugin-ct.macro.esm.js",
   "devDependencies": {
+    "eslint": "^7.0.0",
     "husky": "^4.2.5",
     "tsdx": "^0.13.2",
     "tslib": "^2.0.0",
     "typescript": "^3.9.2"
-  }
+  },
+  "keywords": [
+    "eslint",
+    "eslintplugin",
+    "eslint-plugin"
+  ]
 }
