@@ -48,5 +48,9 @@
   "dependencies": {
     "lodash": "^4.17.15",
     "tailwind-classes-sorter": "^0.1.9"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fleck/eslint-plugin-ct.macro.git"
   }
 }
