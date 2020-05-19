@@ -8,21 +8,15 @@ const twClassesSorter = new TWClassesSorter();
  * @fileoverview consistent order for classes
  */
 
-//------------------------------------------------------------------------------
-// Rule Definition
-//------------------------------------------------------------------------------
-
 const rule: eslint.Rule.RuleModule = {
   meta: {
     docs: {
       description: "consistent order for classes",
-      category: "Fill me in",
+      category: "Stylistic Issues",
       recommended: true,
     },
-    fixable: "code", // or "code" or "whitespace"
-    schema: [
-      // fill in your schema
-    ],
+    fixable: "code",
+    schema: [],
     messages: {
       wrongOrder: `Classes in the wrong order
 
@@ -33,18 +27,6 @@ received: {{received}}`,
   },
 
   create: function(context) {
-    // variables should be defined here
-
-    //----------------------------------------------------------------------
-    // Helpers
-    //----------------------------------------------------------------------
-
-    // any helper functions should go here or else delete this section
-
-    //----------------------------------------------------------------------
-    // Public
-    //----------------------------------------------------------------------
-
     return {
       CallExpression(node) {
         if (
