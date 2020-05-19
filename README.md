@@ -1,31 +1,33 @@
-# eslint-plugin-ct-macro
+# eslint-plugin-ct.macro
 
-class order for ct macro
+Check class order for ct.macro
 
 ## Installation
 
 You'll first need to install [ESLint](http://eslint.org):
 
 ```
+yarn add eslint -D
+# or via npm
 $ npm i eslint --save-dev
 ```
 
-Next, install `eslint-plugin-ct-macro`:
+Next, install `eslint-plugin-ct.macro`:
 
 ```
-$ npm install eslint-plugin-ct-macro --save-dev
+yarn add eslint-plugin-ct.macro -D
+# or via npm
+$ npm install eslint-plugin-ct.macro --save-dev
 ```
-
-**Note:** If you installed ESLint globally (using the `-g` flag) then you must also install `eslint-plugin-ct-macro` globally.
 
 ## Usage
 
-Add `ct-macro` to the plugins section of your `.eslintrc` configuration file. You can omit the `eslint-plugin-` prefix:
+Add `ct.macro` to the plugins section of your `.eslintrc` configuration file. You can omit the `eslint-plugin-` prefix:
 
 ```json
 {
     "plugins": [
-        "ct-macro"
+        "ct.macro"
     ]
 }
 ```
@@ -36,11 +38,11 @@ Then configure the rules you want to use under the rules section.
 ```json
 {
     "rules": {
-        "ct-macro/rule-name": 2
+        "ct.macro/class-order": 2
     }
 }
 ```
 
 ## Supported Rules
 
-* Fill in provided rules here
+ct.macro/class-order is the only rule. Set it to 1 and it will throw warnings. Setting it to 2 will throw errors.
