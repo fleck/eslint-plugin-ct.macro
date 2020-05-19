@@ -1,6 +1,7 @@
-export const sum = (a: number, b: number) => {
-  if ('development' === process.env.NODE_ENV) {
-    console.log('boop');
-  }
-  return a + b;
+import classOrder from "./rules/class-order";
+
+export default {
+  rules: {
+    "class-order": classOrder,
+  },
 };
