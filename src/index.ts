@@ -1,6 +1,6 @@
 import classOrder from "./rules/class-order";
 
-export default {
+module.exports = {
   rules: {
     "class-order": classOrder,
   },
