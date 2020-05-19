@@ -6,7 +6,7 @@ Check class order for ct.macro
 
 You'll first need to install [ESLint](http://eslint.org):
 
-```
+```bash
 yarn add eslint -D
 # or via npm
 $ npm i eslint --save-dev
@@ -14,7 +14,7 @@ $ npm i eslint --save-dev
 
 Next, install `eslint-plugin-ct.macro`:
 
-```
+```bash
 yarn add eslint-plugin-ct.macro -D
 # or via npm
 $ npm install eslint-plugin-ct.macro --save-dev
