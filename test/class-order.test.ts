@@ -33,6 +33,7 @@ received: ct("font-bold", "other", "uppercase", "tracking-wide", "text-sm", "tex
           type: "CallExpression",
         },
       ],
+      output: validOrder,
     },
   ],
 });

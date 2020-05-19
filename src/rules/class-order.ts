@@ -79,6 +79,12 @@ received: {{received}}`,
               expected: `ct("${sortedClassList.join('", "')}")`,
               received: `ct("${classList.join('", "')}")`,
             },
+            fix(fixer) {
+              return fixer.replaceText(
+                node,
+                `ct("${sortedClassList.join('", "')}")`
+              );
+            },
           });
         }
       },
