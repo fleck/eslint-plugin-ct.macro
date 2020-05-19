@@ -13,10 +13,11 @@ import RuleTester from "./JestRuleTester";
 
 const ruleTester = new RuleTester();
 
+const validOrder =
+  'ct("other", "text-sm", "font-bold", "tracking-wide", "text-indigo-600", "uppercase")';
+
 ruleTester.run("class-order", rule, {
-  valid: [
-    // give me some code that won't trigger a warning
-  ],
+  valid: [validOrder],
 
   invalid: [
     {
@@ -26,7 +27,7 @@ ruleTester.run("class-order", rule, {
         {
           message: `Classes in the wrong order
 
-expected: ct("other", "text-sm", "font-bold", "tracking-wide", "text-indigo-600", "uppercase")
+expected: ${validOrder}
 
 received: ct("font-bold", "other", "uppercase", "tracking-wide", "text-sm", "text-indigo-600")`,
           type: "CallExpression",
