@@ -12,24 +12,29 @@ import RuleTester from "./JestRuleTester";
 //------------------------------------------------------------------------------
 
 const ruleTester = new RuleTester();
-
+/**
+ * Column of substrings found in classnames.d.ts
+ *               22777         218494                 221725          222538    223035           224080
+ */
 const validOrder =
-  'ct("other", "text-sm", "font-bold", "tracking-wide", "text-indigo-600", "uppercase")';
+  'ct("other", "font-bold", "sm:tracking-wider", "text-indigo-600", "text-sm", "tracking-wide", "uppercase")';
 
 ruleTester.run("class-order", rule, {
   valid: [validOrder],
 
   invalid: [
     {
-      code:
-        "ct('font-bold', 'other', 'uppercase', 'tracking-wide', 'text-sm', 'text-indigo-600')",
+      code: `ct(
+        "font-bold",
+        "uppercase",
+        "other",
+        "sm:tracking-wider",
+        "tracking-wide",
+        "text-sm",
+        "text-indigo-600"
+      )`,
       errors: [
         {
-          message: `Classes in the wrong order
-
-expected: ${validOrder}
-
-received: ct("font-bold", "other", "uppercase", "tracking-wide", "text-sm", "text-indigo-600")`,
           type: "CallExpression",
         },
       ],

@@ -1303,6 +1303,11 @@ anymatch@^2.0.0:
     micromatch "^3.1.4"
     normalize-path "^2.1.1"
 
+app-root-path@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/app-root-path/-/app-root-path-3.0.0.tgz#210b6f43873227e18a4b810a032283311555d5ad"
+  integrity sha512-qMcx+Gy2UZynHjOHOIXPNvpf+9cjvk3cWrBBK7zg4gH9+clobJRb9NGzcT7mQTcV/6Gm/1WelUtqxVXnNlrwcw==
+
 argparse@^1.0.7:
   version "1.0.10"
   resolved "https://registry.yarnpkg.com/argparse/-/argparse-1.0.10.tgz#bcd6791ea5ae09725e17e5ad988134cd40b3d911"
@@ -1510,7 +1515,7 @@ babel-plugin-jest-hoist@^24.9.0:
   dependencies:
     "@types/babel__traverse" "^7.0.6"
 
-babel-plugin-macros@^2.6.1:
+babel-plugin-macros@^2.6.1, babel-plugin-macros@^2.8.0:
   version "2.8.0"
   resolved "https://registry.yarnpkg.com/babel-plugin-macros/-/babel-plugin-macros-2.8.0.tgz#0f958a7cc6556b1e65344465d99111a1e5e10138"
   integrity sha512-SEP5kJpfGYqYKpBrj5XU3ahw5p5GOHJ0U5ssOSQ/WBVdwkD2Dzlce95exQTs3jOVWPPKLBN2rlEWkCK7dSmLvg==
@@ -2033,6 +2038,15 @@ cssstyle@^1.0.0:
   integrity sha512-GBrLZYZ4X4x6/QEoBnIrqb8B/f5l4+8me2dkom/j1Gtbxy0kBv6OGzKuAsGM75bkGwGAFkt56Iwg28S3XTZgSA==
   dependencies:
     cssom "0.3.x"
+
+ct.macro@^0.23.0:
+  version "0.23.0"
+  resolved "https://registry.yarnpkg.com/ct.macro/-/ct.macro-0.23.0.tgz#c8012ec42f789b92b26ea0790f3226ec9d7e818b"
+  integrity sha512-DkRa8j3//OUMnFdRhn/BW7jefuhQB6G+bR5NslsQIlFM6WkUfy1wuHnp17CeQnwFcHWiS/NxCn+EW/LDmTReLg==
+  dependencies:
+    app-root-path "^3.0.0"
+    babel-plugin-macros "^2.8.0"
+    postcss-ts-classnames "^0.1.2"
 
 damerau-levenshtein@^1.0.4:
   version "1.0.6"
@@ -3938,6 +3952,11 @@ locate-path@^5.0.0:
   dependencies:
     p-locate "^4.1.0"
 
+lodash.debounce@^4.0.8:
+  version "4.0.8"
+  resolved "https://registry.yarnpkg.com/lodash.debounce/-/lodash.debounce-4.0.8.tgz#82d79bff30a67c4005ffd5e2515300ad9ca4d7af"
+  integrity sha1-gteb/zCmfEAF/9XiUVMArZyk168=
+
 lodash.memoize@4.x:
   version "4.1.2"
   resolved "https://registry.yarnpkg.com/lodash.memoize/-/lodash.memoize-4.1.2.tgz#bcc6c49a42a2840ed997f323eada5ecd182e0bfe"
@@ -4676,6 +4695,15 @@ postcss-selector-parser@^6.0.0, postcss-selector-parser@^6.0.2:
     cssesc "^3.0.0"
     indexes-of "^1.0.1"
     uniq "^1.0.1"
+
+postcss-ts-classnames@^0.1.2:
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/postcss-ts-classnames/-/postcss-ts-classnames-0.1.2.tgz#e3f287f1f973bf2666390f511922334c3f962f70"
+  integrity sha512-NmkxxJx+rd8zZE+CoVlrtmw19eQ9d8A+lsOxzCi/rmNy8eWfSIWwdDJbID3EdEPtBwZZEHLE3b84qk2QWojWVA==
+  dependencies:
+    lodash.debounce "^4.0.8"
+    postcss "^7.0.21"
+    postcss-selector-parser "^6.0.2"
 
 postcss-value-parser@^3.3.0:
   version "3.3.1"
@@ -5668,11 +5696,6 @@ table@^5.2.3:
     lodash "^4.17.14"
     slice-ansi "^2.1.0"
     string-width "^3.0.0"
-
-tailwind-classes-sorter@^0.1.9:
-  version "0.1.9"
-  resolved "https://registry.yarnpkg.com/tailwind-classes-sorter/-/tailwind-classes-sorter-0.1.9.tgz#19a240fe068cd8ded2360defd8e3f158194e7c63"
-  integrity sha512-Ul7mZ8G4N8Ch7nPJilac5Xl4foCwdhTNCi9go53gGp6PiaIkYKuNUPkAYSzejbJjUA+zPDDkV8zwN4mtIz9eDg==
 
 tailwindcss@^1.4.6:
   version "1.4.6"

@@ -1,8 +1,14 @@
 import eslint from "eslint";
-import TWClassesSorter from "tailwind-classes-sorter";
 import { compact, isEqual } from "lodash";
+import { defaultDirectory, classnamesFilename } from "ct.macro";
+import fs from "fs";
+import path from "path";
 
-const twClassesSorter = new TWClassesSorter();
+const allClasses = fs
+  .readFileSync(path.join(defaultDirectory, classnamesFilename))
+  .toString()
+  .split(' "')
+  .map(dirtyClassName => dirtyClassName.replace(/[|\s"\\]/g, ""));
 
 /**
  * @fileoverview consistent order for classes
@@ -49,9 +55,9 @@ received: {{received}}`,
 
         const classList = compact(classes);
 
-        const sortedClassList = twClassesSorter.sortClasslist(
-          classList.concat()
-        );
+        const sortedClassList = classList
+          .concat()
+          .sort((a, b) => allClasses.indexOf(a) - allClasses.indexOf(b));
 
         if (!isEqual(classList, sortedClassList)) {
           context.report({
