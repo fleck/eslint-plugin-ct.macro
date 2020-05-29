@@ -2039,10 +2039,10 @@ cssstyle@^1.0.0:
   dependencies:
     cssom "0.3.x"
 
-ct.macro@^0.23.0:
-  version "0.23.0"
-  resolved "https://registry.yarnpkg.com/ct.macro/-/ct.macro-0.23.0.tgz#c8012ec42f789b92b26ea0790f3226ec9d7e818b"
-  integrity sha512-DkRa8j3//OUMnFdRhn/BW7jefuhQB6G+bR5NslsQIlFM6WkUfy1wuHnp17CeQnwFcHWiS/NxCn+EW/LDmTReLg==
+ct.macro@^0.24.0:
+  version "0.24.0"
+  resolved "https://registry.yarnpkg.com/ct.macro/-/ct.macro-0.24.0.tgz#4c1659af9c71b4735f86920acf525416a32ba139"
+  integrity sha512-CRMJIxAJbCc+90+VTLUXSupVhPVRET/UN3PRcErRkFtrQAcx5z9Kcp7bbirzuCqTjC+tDHjGuqHmQKblv6y7SA==
   dependencies:
     app-root-path "^3.0.0"
     babel-plugin-macros "^2.8.0"
