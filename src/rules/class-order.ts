@@ -4,9 +4,11 @@ import { defaultDirectory, classnamesJSONFilename } from "ct.macro";
 import fs from "fs-extra";
 import path from "path";
 
-const allClasses = fs.readJSONSync(
-  path.join(defaultDirectory, classnamesJSONFilename)
-);
+const classnamesFilePath = path.join(defaultDirectory, classnamesJSONFilename);
+
+let classesFileLastModified = fs.statSync(classnamesFilePath);
+
+let allClasses = fs.readJSONSync(classnamesFilePath);
 
 /**
  * @fileoverview consistent order for classes
@@ -31,6 +33,13 @@ received: {{received}}`,
   },
 
   create: function(context) {
+    const newClassesFileLastModified = fs.statSync(classnamesFilePath);
+
+    if (newClassesFileLastModified !== classesFileLastModified) {
+      allClasses = fs.readJSONSync(classnamesFilePath);
+      classesFileLastModified = newClassesFileLastModified;
+    }
+
     return {
       CallExpression(node) {
         if (
