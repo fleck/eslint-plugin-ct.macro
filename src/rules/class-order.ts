@@ -6,7 +6,9 @@ import path from "path";
 
 const classnamesFilePath = path.join(defaultDirectory, classnamesJSONFilename);
 
-let classesFileLastModified = fs.statSync(classnamesFilePath);
+let classesFileLastModified = fs
+  .statSync(classnamesFilePath)
+  .mtime.toISOString();
 
 let allClasses = fs.readJSONSync(classnamesFilePath);
 
@@ -33,7 +35,9 @@ received: {{received}}`,
   },
 
   create: function(context) {
-    const newClassesFileLastModified = fs.statSync(classnamesFilePath);
+    const newClassesFileLastModified = fs
+      .statSync(classnamesFilePath)
+      .mtime.toISOString();
 
     if (newClassesFileLastModified !== classesFileLastModified) {
       allClasses = fs.readJSONSync(classnamesFilePath);
