@@ -1,14 +1,12 @@
 import eslint from "eslint";
 import { compact, isEqual } from "lodash";
-import { defaultDirectory, classnamesFilename } from "ct.macro";
-import fs from "fs";
+import { defaultDirectory, classnamesJSONFilename } from "ct.macro";
+import fs from "fs-extra";
 import path from "path";
 
-const allClasses = fs
-  .readFileSync(path.join(defaultDirectory, classnamesFilename))
-  .toString()
-  .split(' "')
-  .map(dirtyClassName => dirtyClassName.replace(/[|\s"\\]/g, ""));
+const allClasses = fs.readJSONSync(
+  path.join(defaultDirectory, classnamesJSONFilename)
+);
 
 /**
  * @fileoverview consistent order for classes
