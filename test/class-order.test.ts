@@ -14,10 +14,10 @@ import RuleTester from "./JestRuleTester";
 const ruleTester = new RuleTester();
 /**
  * Column of substrings found in classnames.d.ts
- *               22777         218494                 221725          222538    223035           224080
+ *               14449         27813             32423      32555        32863           82326
  */
 const validOrder =
-  'ct("other", "font-bold", "sm:tracking-wider", "text-indigo-600", "text-sm", "tracking-wide", "uppercase")';
+  'ct("other", "font-bold", "text-indigo-600", "text-sm", "uppercase", "tracking-wide", "sm:tracking-wider")';
 
 ruleTester.run("class-order", rule, {
   valid: [validOrder],
