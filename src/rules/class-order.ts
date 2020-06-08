@@ -1,16 +1,24 @@
 import eslint from "eslint";
 import { compact, isEqual } from "lodash";
-import { defaultDirectory, classnamesJSONFilename } from "ct.macro";
+import { defaultDirectory, classNamesDeclarationFilename } from "ct.macro";
 import fs from "fs-extra";
 import path from "path";
 
-const classnamesFilePath = path.join(defaultDirectory, classnamesJSONFilename);
+const declarationPath = path.join(
+  defaultDirectory,
+  classNamesDeclarationFilename
+);
 
-let classesFileLastModified = fs
-  .statSync(classnamesFilePath)
-  .mtime.toISOString();
+const loadAndParseTypes = () =>
+  fs
+    .readFileSync(declarationPath)
+    .toString()
+    .split(' "')
+    .map(dirtyClassName => dirtyClassName.replace(/[|\s"]/g, ""));
 
-let allClasses = fs.readJSONSync(classnamesFilePath);
+let classesFileLastModified = fs.statSync(declarationPath).mtime.toISOString();
+
+let allClasses = loadAndParseTypes();
 
 /**
  * @fileoverview consistent order for classes
@@ -36,11 +44,11 @@ received: {{received}}`,
 
   create: function(context) {
     const newClassesFileLastModified = fs
-      .statSync(classnamesFilePath)
+      .statSync(declarationPath)
       .mtime.toISOString();
 
     if (newClassesFileLastModified !== classesFileLastModified) {
-      allClasses = fs.readJSONSync(classnamesFilePath);
+      allClasses = loadAndParseTypes();
       classesFileLastModified = newClassesFileLastModified;
     }
 
