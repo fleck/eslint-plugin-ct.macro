@@ -47,7 +47,7 @@
     "eslint-plugin"
   ],
   "dependencies": {
-    "ct.macro": "^0.34.0",
+    "ct.macro": "^0.36.0",
     "fs-extra": "^9.0.1",
     "lodash": "^4.17.15"
   },
