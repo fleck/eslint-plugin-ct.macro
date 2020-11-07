@@ -219,11 +219,6 @@
   dependencies:
     "@babel/types" "^7.8.3"
 
-"@babel/helper-validator-identifier@^7.10.4":
-  version "7.10.4"
-  resolved "https://registry.yarnpkg.com/@babel/helper-validator-identifier/-/helper-validator-identifier-7.10.4.tgz#a78c7a7251e01f616512d31b10adcf52ada5e0d2"
-  integrity sha512-3U9y+43hz7ZM+rzG24Qe2mufW5KhvFg/NhnNph+i9mgCtdTCtMJuI1TMkrIUiK7Ix4PYlRF9I5dhqaLYA/ADXw==
-
 "@babel/helper-validator-identifier@^7.9.0", "@babel/helper-validator-identifier@^7.9.5":
   version "7.9.5"
   resolved "https://registry.yarnpkg.com/@babel/helper-validator-identifier/-/helper-validator-identifier-7.9.5.tgz#90977a8e6fbf6b431a7dc31752eee233bf052d80"
@@ -792,15 +787,6 @@
   dependencies:
     "@babel/helper-validator-identifier" "^7.9.5"
     lodash "^4.17.13"
-    to-fast-properties "^2.0.0"
-
-"@babel/types@^7.10.3":
-  version "7.10.5"
-  resolved "https://registry.yarnpkg.com/@babel/types/-/types-7.10.5.tgz#d88ae7e2fde86bfbfe851d4d81afa70a997b5d15"
-  integrity sha512-ixV66KWfCI6GKoA/2H9v6bQdbfXEwwpOdQ8cRvb4F+eyvhlaHxWFMQB4+3d9QFJXZsiiiqVrewNV0DFEQpyT4Q==
-  dependencies:
-    "@babel/helper-validator-identifier" "^7.10.4"
-    lodash "^4.17.19"
     to-fast-properties "^2.0.0"
 
 "@cnakazawa/watch@^1.0.3":
@@ -1541,7 +1527,7 @@ babel-plugin-jest-hoist@^24.9.0:
   dependencies:
     "@types/babel__traverse" "^7.0.6"
 
-babel-plugin-macros@^2.6.1, babel-plugin-macros@^2.8.0:
+babel-plugin-macros@^2.6.1:
   version "2.8.0"
   resolved "https://registry.yarnpkg.com/babel-plugin-macros/-/babel-plugin-macros-2.8.0.tgz#0f958a7cc6556b1e65344465d99111a1e5e10138"
   integrity sha512-SEP5kJpfGYqYKpBrj5XU3ahw5p5GOHJ0U5ssOSQ/WBVdwkD2Dzlce95exQTs3jOVWPPKLBN2rlEWkCK7dSmLvg==
@@ -2059,17 +2045,6 @@ cssstyle@^1.0.0:
   integrity sha512-GBrLZYZ4X4x6/QEoBnIrqb8B/f5l4+8me2dkom/j1Gtbxy0kBv6OGzKuAsGM75bkGwGAFkt56Iwg28S3XTZgSA==
   dependencies:
     cssom "0.3.x"
-
-ct.macro@*:
-  version "0.38.0"
-  resolved "https://registry.yarnpkg.com/ct.macro/-/ct.macro-0.38.0.tgz#16c9f5d21398900b9e3efdc9a4f4fe49c90773f2"
-  integrity sha512-CfqEbYKyJVwst3mTumSd7qSwbuI+0XkA98RDw+OK0pO0FMYcWHlhSiVJ2n2bo4bX6gkKJe51mHrlg47mN+MqQQ==
-  dependencies:
-    "@babel/types" "^7.10.3"
-    app-root-path "^3.0.0"
-    babel-plugin-macros "^2.8.0"
-    postcss "^7.0.0"
-    postcss-selector-parser "^6.0.2"
 
 damerau-levenshtein@^1.0.4:
   version "1.0.6"
@@ -4697,6 +4672,15 @@ posix-character-classes@^0.1.0:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/posix-character-classes/-/posix-character-classes-0.1.1.tgz#01eac0fe3b5af71a2a6c02feabb8c1fef7e00eab"
   integrity sha1-AerA/jta9xoqbAL+q7jB/vfgDqs=
+
+postcss-class-types@*:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/postcss-class-types/-/postcss-class-types-0.2.0.tgz#1d1e6fdae7fc72722a6bca4575e1502218376515"
+  integrity sha512-F/cG2MSOFa0ktKOsgT1mP7yIlO4lSM01RJU0qoG+sW+pc2PUCWffczh9NAsNbsuvFFHxE16rBEDzKipXvm+HNQ==
+  dependencies:
+    app-root-path "^3.0.0"
+    postcss "^7.0.0"
+    postcss-selector-parser "^6.0.2"
 
 postcss-functions@^3.0.0:
   version "3.0.0"

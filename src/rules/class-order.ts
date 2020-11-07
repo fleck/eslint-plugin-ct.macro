@@ -1,6 +1,9 @@
 import eslint from "eslint";
 import { compact, isEqual } from "lodash";
-import { defaultDirectory, classNamesDeclarationFilename } from "ct.macro";
+import {
+  defaultDirectory,
+  classNamesDeclarationFilename,
+} from "postcss-class-types";
 import fs from "fs-extra";
 import path from "path";
 
