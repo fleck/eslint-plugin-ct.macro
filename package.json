@@ -1,5 +1,5 @@
 {
-  "version": "0.17.0",
+  "version": "0.18.0",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -47,9 +47,9 @@
     "eslint-plugin"
   ],
   "dependencies": {
-    "postcss-class-types": "*",
     "fs-extra": "^9.0.1",
-    "lodash": "^4.17.19"
+    "lodash": "^4.17.19",
+    "postcss-class-types": "*"
   },
   "repository": {
     "type": "git",
