@@ -27,9 +27,9 @@
     "semi": true,
     "trailingComma": "es5"
   },
-  "name": "eslint-plugin-ct.macro",
+  "name": "eslint-plugin-class-types",
   "author": "Jonathan Fleckenstein",
-  "module": "dist/eslint-plugin-ct.macro.esm.js",
+  "module": "dist/eslint-plugin-class-types.esm.js",
   "devDependencies": {
     "@types/eslint": "^6.8.1",
     "@types/fs-extra": "^9.0.1",
@@ -53,6 +53,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/fleck/eslint-plugin-ct.macro.git"
+    "url": "https://github.com/fleck/eslint-plugin-class-types.git"
   }
 }

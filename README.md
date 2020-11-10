@@ -1,4 +1,4 @@
-# eslint-plugin-ct.macro
+# eslint-plugin-class-types
 
 Check class order for ct.macro
 
@@ -12,12 +12,12 @@ yarn add eslint -D
 $ npm i eslint --save-dev
 ```
 
-Next, install `eslint-plugin-ct.macro`:
+Next, install `eslint-plugin-class-types`:
 
 ```bash
-yarn add eslint-plugin-ct.macro -D
+yarn add eslint-plugin-class-types -D
 # or via npm
-$ npm install eslint-plugin-ct.macro --save-dev
+$ npm install eslint-plugin-class-types --save-dev
 ```
 
 ## Usage
