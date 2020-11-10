@@ -67,6 +67,14 @@ received: {{received}}`,
           return;
         }
 
+        const identifiers = node.arguments
+          .filter(function nonClasses<T extends typeof node.arguments[number]>(
+            argument: T
+          ): argument is Extract<T, { type: "Identifier" }> {
+            return argument.type === "Identifier";
+          })
+          .map(identifier => identifier.name);
+
         const classList = node.arguments
           .filter(function nonClasses<T extends typeof node.arguments[number]>(
             argument: T
@@ -90,7 +98,9 @@ received: {{received}}`,
             fix(fixer) {
               return fixer.replaceText(
                 node,
-                `ct("${sortedClassList.join('", "')}")`
+                `ct("${sortedClassList.join('", "')}"${
+                  identifiers.length ? ", " : ""
+                }${identifiers.join(", ")})`
               );
             },
           });

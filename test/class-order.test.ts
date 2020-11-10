@@ -42,3 +42,32 @@ ruleTester.run("class-order", rule, {
     },
   ],
 });
+
+const validOrderWithIdentifiers =
+  'ct("other", "font-bold", "text-sm", "text-indigo-600", "uppercase", "tracking-wide", "sm:tracking-wider", otherStyle, sharedStyle)';
+
+ruleTester.run("class-order", rule, {
+  valid: [validOrderWithIdentifiers],
+
+  invalid: [
+    {
+      code: `ct(
+        otherStyle,
+        "font-bold",
+        "uppercase",
+        sharedStyle,
+        "other",
+        "sm:tracking-wider",
+        "tracking-wide",
+        "text-sm",
+        "text-indigo-600"
+      )`,
+      errors: [
+        {
+          type: "CallExpression",
+        },
+      ],
+      output: validOrderWithIdentifiers,
+    },
+  ],
+});
