@@ -1,5 +1,5 @@
 import eslint from "eslint";
-import { compact, isEqual } from "lodash";
+import { isEqual } from "lodash";
 import {
   defaultDirectory,
   classNamesDeclarationFilename,
@@ -67,15 +67,23 @@ received: {{received}}`,
           return;
         }
 
-        const classes = node.arguments.map(argument => {
-          if ("value" in argument) {
-            return String(argument.value);
-          } else {
-            return undefined;
-          }
+        // const classes = node.arguments.map(argument => {
+        //   if ("value" in argument) {
+        //     return String(argument.value);
+        //   } else {
+        //     return undefined;
+        //   }
+        // });
+
+        const literalClasses = node.arguments.filter(function nonClasses<
+          T extends typeof node.arguments[number]
+        >(argument: T): argument is Extract<T, { type: "Literal" }> {
+          return argument.type === "Literal";
         });
 
-        const classList = compact(classes);
+        const classList = literalClasses.map(literalClass =>
+          String(literalClass.value)
+        );
 
         const sortedClassList = classList
           .concat()

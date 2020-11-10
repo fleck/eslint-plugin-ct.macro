@@ -17,7 +17,7 @@ const ruleTester = new RuleTester();
  *               14449         27813             32423      32555        32863           82326
  */
 const validOrder =
-  'ct("other", "font-bold", "text-indigo-600", "text-sm", "uppercase", "tracking-wide", "sm:tracking-wider")';
+  'ct("other", "font-bold", "text-sm", "text-indigo-600", "uppercase", "tracking-wide", "sm:tracking-wider")';
 
 ruleTester.run("class-order", rule, {
   valid: [validOrder],
