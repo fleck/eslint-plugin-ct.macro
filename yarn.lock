@@ -4674,9 +4674,9 @@ posix-character-classes@^0.1.0:
   integrity sha1-AerA/jta9xoqbAL+q7jB/vfgDqs=
 
 postcss-class-types@*:
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/postcss-class-types/-/postcss-class-types-0.2.0.tgz#1d1e6fdae7fc72722a6bca4575e1502218376515"
-  integrity sha512-F/cG2MSOFa0ktKOsgT1mP7yIlO4lSM01RJU0qoG+sW+pc2PUCWffczh9NAsNbsuvFFHxE16rBEDzKipXvm+HNQ==
+  version "0.10.0"
+  resolved "https://registry.yarnpkg.com/postcss-class-types/-/postcss-class-types-0.10.0.tgz#a1105fe6647ecaa7ad01f47e3e322d875646808c"
+  integrity sha512-vchsJ/YY2u+h9qVTgP5jeTt+vLuwcKg3ou57GEtHFgz3gCRoeDlL6uQ3zD8O4Qg3CLume9/swFnB48omlplmjw==
   dependencies:
     app-root-path "^3.0.0"
     postcss "^7.0.0"
