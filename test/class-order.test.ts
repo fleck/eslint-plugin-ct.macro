@@ -71,3 +71,64 @@ ruleTester.run("class-order", rule, {
     },
   ],
 });
+
+const validTernary =
+  'ct("other", "font-bold", "text-sm", "text-indigo-600", "uppercase", "tracking-wide", "sm:tracking-wider", otherStyle, videoRef.current ? "block" : "")';
+
+ruleTester.run("class-order", rule, {
+  valid: [validTernary],
+
+  invalid: [
+    {
+      code: `ct(
+        otherStyle,
+        "font-bold",
+        "uppercase",
+        "other",
+        videoRef.current ? "block" : "",
+        "sm:tracking-wider",
+        "tracking-wide",
+        "text-sm",
+        "text-indigo-600"
+      )`,
+      errors: [
+        {
+          type: "CallExpression",
+        },
+      ],
+      output: validTernary,
+    },
+  ],
+});
+
+const validNestedCall =
+  'ct("other", "font-bold", "text-sm", "text-indigo-600", "uppercase", "tracking-wide", "sm:tracking-wider", otherStyle, videoRef.current ? ct("font-bold", "text-sm") : "")';
+
+ruleTester.run("class-order", rule, {
+  valid: [validNestedCall],
+
+  invalid: [
+    {
+      code: `ct(
+        otherStyle,
+        "font-bold",
+        "uppercase",
+        "other",
+        videoRef.current ? ct("text-sm", "font-bold") : "",
+        "sm:tracking-wider",
+        "tracking-wide",
+        "text-sm",
+        "text-indigo-600"
+      )`,
+      errors: [
+        {
+          type: "CallExpression",
+        },
+        {
+          type: "CallExpression",
+        },
+      ],
+      output: validNestedCall,
+    },
+  ],
+});
