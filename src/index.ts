@@ -1,4 +1,4 @@
-import singleClassPerArg from "rules/singleClassPerArg";
+import singleClassPerArg from "./rules/singleClassPerArg";
 import classOrder from "./rules/classOrder";
 
 module.exports = {
