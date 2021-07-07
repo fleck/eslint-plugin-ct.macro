@@ -1,4 +1,4 @@
-import rule from "../src/rules/class-order";
+import rule from "../src/rules/classOrder";
 import RuleTester from "./JestRuleTester";
 
 //------------------------------------------------------------------------------
